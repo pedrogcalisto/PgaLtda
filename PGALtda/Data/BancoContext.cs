@@ -10,5 +10,6 @@ namespace PGALtda.Data
         }
 
         public DbSet<UnidadeModel> Unidades { get; set; }
+        public DbSet<FuncionarioModel> Funcionarios { get; set; }
     }
 }

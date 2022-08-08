@@ -354,7 +354,6 @@ C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\ref\PGALtda.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Unidades\Index.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Unidades\Cadastrar.cshtml.g.cs
-C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Unidades\Editar.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Unidades\InativarConfirmacao.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net5.0\Humanizer.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
@@ -388,3 +387,6 @@ C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\Index.cshtml.g.cs
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\Cadastrar.cshtml.g.cs
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\InativarConfirmacao.cshtml.g.cs

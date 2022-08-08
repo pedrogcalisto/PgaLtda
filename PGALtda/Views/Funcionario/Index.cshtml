@@ -1,22 +1,22 @@
-﻿@model IEnumerable<UnidadeModel>
+﻿@model IEnumerable<FuncionarioModel>
 @{
-    ViewData["Title"] = "Unidades";
+    ViewData["Title"] = "Funcionarios";
 }
 <div class="text-center">
     <div>
-        <a class="btn btn-success" role="button" asp-controller="Unidades" asp-action="Cadastrar">Adicionar nova Unidade</a>
+        <a class="btn btn-success" role="button" asp-controller="Funcionario" asp-action="Cadastrar">Adicionar novo Funcionário</a>
     </div>
 
     <br />
 
-    <h1 class="display-4"> Unidades</h1>
+    <h1 class="display-4"> Funcionários</h1>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Identificador</th>
           <th scope="col">Nome</th>
-          <th scope="col">Cidade</th>
-          <th scope="col">Cnpj</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Cpf</th>
           <th scope="col">Ações</th>
         </tr>
       </thead>
@@ -29,11 +29,11 @@
                      <tr>
                         <td scope="row">@item.Id</td>
                         <td>@item.Nome</td>
-                        <td>@item.Cidade</td>
-                        <td>@item.Cnpj</td>
+                        <td>@item.Idade</td>
+                        <td>@item.Cpf</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                <a type="button" class="btn btn-danger" asp-route-id="@item.Id" asp-controller="Unidades" asp-action="InativarConfirmacao">Inativar</a>
+                                <a type="button" class="btn btn-danger" asp-route-id="@item.Id" asp-controller="Funcionarios" asp-action="InativarConfirmacao">Inativar</a>
                             </div>
                         </td>
                     </tr>

@@ -1,5 +1,6 @@
 ﻿using PGALtda.Data;
 using PGALtda.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,8 +20,10 @@ namespace PGALtda.Repositorios
             {
                 throw new System.Exception("Cnpj já cadastrado!");
             }
+
             _context.Add(unidade);
             unidade.Ativo = true;
+            unidade.DtCriacao = DateTime.Now;
             _context.SaveChanges();
             return unidade;
         }

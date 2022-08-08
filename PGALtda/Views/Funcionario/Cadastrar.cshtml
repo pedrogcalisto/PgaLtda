@@ -1,0 +1,24 @@
+﻿@model FuncionarioModel 
+<div class="text-center">
+    <h1 class="display-4"> Cadastrar Funcionário</h1>
+</div>
+
+<form asp-controller="Funcionario" asp-action="Cadastrar" method="post">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+    @Html.ValidationMessageFor(x => x.Nome)
+  </div>
+  <div class="mb-3">
+    <label for="cidade" class="form-label">Idade</label>
+    <input type="text" asp-for="Idade" class="form-control" placeholder="Idade">
+    @Html.ValidationMessageFor(x => x.Idade)
+  </div>
+  <div class="mb-3">
+    <label for="cnpj" class="form-label">CPF</label>
+    <input type="text" asp-for="Cpf" maxlength="14" class="form-control" placeholder="CPF">
+    @Html.ValidationMessageFor(x => x.Cpf)
+  </div>
+  <a class="btn btn-secondary btn-block" asp-controller="Funcionario" asp-action="Index" role="button">Voltar</a>
+  <button type="submit" class="btn btn-primary btn-block">Salvar</button> 
+</form>

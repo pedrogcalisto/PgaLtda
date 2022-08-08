@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PGALtda.Models
 {
@@ -13,5 +14,6 @@ namespace PGALtda.Models
         [MinLength(14, ErrorMessage ="Cnpj inválido!")]
         public string Cnpj { get; set; }
         public bool Ativo { get; set; }
+        public DateTime DtCriacao { get; set; }
     }
 }
