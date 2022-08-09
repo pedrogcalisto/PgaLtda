@@ -5,6 +5,7 @@ namespace PGALtda.Models
 {
     public class FuncionarioModel
     {
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Digite o nome do funcionário")]
         public string Nome { get; set; }
