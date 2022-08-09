@@ -9,5 +9,6 @@ namespace PGALtda.Repositorios
         FuncionarioModel Cadastrar(FuncionarioModel funcionario);
         void Inativar(int id);
         FuncionarioModel Obter(int id);
+        IEnumerable<FuncionarioModel> ListarFuncionariosSemVinculo();
     }
 }

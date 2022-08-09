@@ -390,3 +390,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\bin\Debug\net
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\Index.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\Cadastrar.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\InativarConfirmacao.cshtml.g.cs
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\FuncionarioUnidade.cshtml.g.cs
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\DesvincularFuncionarioConfirmacao.cshtml.g.cs

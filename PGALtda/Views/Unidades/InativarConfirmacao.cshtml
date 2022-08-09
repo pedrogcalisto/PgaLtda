@@ -1,11 +1,11 @@
-﻿@model FuncionarioModel
+﻿@model UnidadeModel
 @{
-    ViewData["Title"] = "Inativar Funcionário";
+    ViewData["Title"] = "Inativar Unidade";
 }
 
 <div class="text-center">
     <h3 class="display-4"> Tem certeza que deseja inativar o Funcionário (@Model.Nome)?</h3>
 </div>
 
-<a class="btn btn-primary btn-block" asp-controller="Funcionario" asp-action="Index" role="button">Não</a>
-<a class="btn btn-danger btn-block" asp-controller="Funcionario" asp-action="Inativar" asp-route-id="@Model.Id" role="button">Sim</a>
+<a class="btn btn-primary btn-block" asp-controller="Unidades" asp-action="Index" role="button">Não</a>
+<a class="btn btn-danger btn-block" asp-controller="Unidades" asp-action="Inativar" asp-route-id="@Model.Id" role="button">Sim</a>

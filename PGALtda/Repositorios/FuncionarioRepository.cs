@@ -9,9 +9,11 @@ namespace PGALtda.Repositorios
     public class FuncionarioRepository : IFuncionarioRepository
     {
         private readonly BancoContext _context;
-        public FuncionarioRepository(BancoContext context)
+        private readonly IFuncionarioUnidadeRepository _funcionarioUnidadeRepository;   
+        public FuncionarioRepository(BancoContext context, IFuncionarioUnidadeRepository funcionarioUnidadeRepository)
         {
             _context = context;
+            _funcionarioUnidadeRepository = funcionarioUnidadeRepository;
         }
         public FuncionarioModel Cadastrar(FuncionarioModel funcionario)
         {
@@ -44,6 +46,24 @@ namespace PGALtda.Repositorios
         public FuncionarioModel Obter(int id)
         {
             return _context.Funcionarios.FirstOrDefault(x => x.Id == id);
+        }
+
+        public IEnumerable<FuncionarioModel> ListarFuncionariosSemVinculo()
+        {
+            var funcionarios = _context.Funcionarios.ToList().Where(x => x.Ativo == true);
+            var funcionariosVinculados = _context.FuncionarioUnidade.ToList().Where(x => x.DtDemissao != null);
+            List<FuncionarioModel> funcionarioNaoVinculados = new List<FuncionarioModel>();
+
+            foreach(var funcionario in funcionarios)
+            {
+                var temFuncionario = funcionariosVinculados.FirstOrDefault(x => x.FuncionarioId == funcionario.Id);
+                if (temFuncionario == null)
+                {
+                    funcionarioNaoVinculados.Add(funcionario);
+                }
+            }
+
+            return funcionarioNaoVinculados;
         }
     }
 }

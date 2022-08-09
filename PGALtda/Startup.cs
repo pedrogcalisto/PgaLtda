@@ -31,6 +31,7 @@ namespace PGALtda
             services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>( o=> o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
             services.AddScoped<IUnidadeRepository, UnidadeRepository>();
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IFuncionarioUnidadeRepository, FuncionarioUnidadeRepository>();
             services.AddScoped<IRelatorioRepository, RelatorioRepository>();
         }
 

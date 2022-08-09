@@ -1,0 +1,11 @@
+﻿@model VincularFuncionarioModel
+@{
+    ViewData["Title"] = "Desvincular Funcionário";
+}
+
+<div class="text-center">
+    <h3 class="display-4"> Tem certeza que deseja inativar o funcionário (@Model.FuncionarioNome) da unidade (@Model.UnidadeNome)?</h3>
+</div>
+
+<a class="btn btn-primary btn-block" asp-controller="Funcionario" asp-action="Index" role="button">Não</a>
+<a class="btn btn-danger btn-block" asp-controller="Funcionario" asp-action="DesvincularFuncionario" asp-route-id="@Model.FuncionarioId" role="button">Sim</a>
