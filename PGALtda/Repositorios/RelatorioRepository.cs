@@ -18,6 +18,7 @@ namespace PGALtda.Repositorios
         {
             var relatorio = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal ||
              x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal);
+            //gerar relatorio por tipo
 
             
             return relatorio.ToList();
