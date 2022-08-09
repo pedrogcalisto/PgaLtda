@@ -1,0 +1,27 @@
+﻿@model VincularFuncionarioModel
+
+<div class="text-center">
+    <h1 class="display-4"> Vincular Funcionário</h1>
+</div>
+
+<form asp-controller="Funcionario" asp-action="VincularFuncionario" method="post">
+  <div class="mb-3">
+    <label for="funcionario" class="form-label">Nome Funcionário</label>
+    <input type="text" asp-for="FuncionarioNome" value="@Model.FuncionarioNome" class="form-control" placeholder="Nome" readonly>
+    <input asp-for="FuncionarioId" value="@Model.FuncionarioId" hidden/>
+  </div>
+    <div class="mb-3">
+    <label for="unidades" class="form-label">Unidades</label>
+    <select id="unidades"asp-for="UnidadeId" class="form-control">
+        <option value="0">Selecione</option>
+        @{
+            foreach(var item in Model.Unidades)
+            {
+                     <option title="@item.Nome" value="@item.Id">@item.Nome</option>
+            }
+        }
+    </select>
+  </div>
+  <a class="btn btn-secondary btn-block" asp-controller="Funcionario" asp-action="Index" role="button">Voltar</a>
+  <button type="submit" class="btn btn-primary btn-block">Salvar</button> 
+</form>

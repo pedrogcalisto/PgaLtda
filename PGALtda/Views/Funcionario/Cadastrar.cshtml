@@ -10,13 +10,13 @@
     @Html.ValidationMessageFor(x => x.Nome)
   </div>
   <div class="mb-3">
-    <label for="cidade" class="form-label">Idade</label>
+    <label for="idade" class="form-label">Idade</label>
     <input type="text" asp-for="Idade" class="form-control" placeholder="Idade">
-    @Html.ValidationMessageFor(x => x.Idade)
+    @Html.ValidationMessageFor(x=>x.Idade)
   </div>
   <div class="mb-3">
-    <label for="cnpj" class="form-label">CPF</label>
-    <input type="text" asp-for="Cpf" maxlength="14" class="form-control" placeholder="CPF">
+    <label for="cpf" class="form-label">CPF</label>
+    <input type="text" asp-for="Cpf" maxlength="11" class="form-control" placeholder="CPF">
     @Html.ValidationMessageFor(x => x.Cpf)
   </div>
   <a class="btn btn-secondary btn-block" asp-controller="Funcionario" asp-action="Index" role="button">Voltar</a>
