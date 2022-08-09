@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PGALtda.Data;
 using PGALtda.Repositorios;
+using PGALtda.Repositorios.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace PGALtda
             services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>( o=> o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
             services.AddScoped<IUnidadeRepository, UnidadeRepository>();
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IRelatorioRepository, RelatorioRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
