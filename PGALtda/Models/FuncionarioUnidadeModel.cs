@@ -5,7 +5,6 @@ namespace PGALtda.Models
 {
     public class FuncionarioUnidadeModel
     {
-        public int Id { get; set; }
         public int UnidadeId { get; set; }
         public int FuncionarioId { get; set; }
         public DateTime DtAdmissao { get; set; }
