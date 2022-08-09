@@ -5,6 +5,7 @@ namespace PGALtda.Models
 {
     public class UnidadeModel
     {
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Digite o nome da unidade")]
         public string Nome { get; set; }
