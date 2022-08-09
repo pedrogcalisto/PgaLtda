@@ -1,0 +1,33 @@
+﻿@using PGALtda.Models.DTOs
+@model FiltroDto
+@{
+    ViewData["Title"] = "Relatorio";
+}
+<div class="text-center">
+
+    <h1 class="display-4"> Gerar Relatório</h1>
+
+</div>
+
+<form asp-controller="Relatorio" asp-action="GerarRelatorio" method="post">
+   <div class="mb-3">
+    <label for="dataInicial" class="form-label">Data Inicial</label>
+    <input type="date" asp-for="DataInicial" class="form-control datepicker" placeholder="Data Inicial">
+  </div>
+   <div class="mb-3">
+    <label for="dataFinal" class="form-label">Data Final</label>
+    <input type="date" asp-for="DataFinal" class="form-control datepicker" placeholder="Data Final">
+  </div>
+    <div class="mb-3">
+        <select id="unidades"asp-for="UnidadeId" class="form-control">
+            <option value="0">Selecione</option>
+            @{
+                foreach(var item in Model.Unidades)
+                {
+                         <option title="@item.Nome" value="@item.Id">@item.Nome</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Gerar Relatório</button> 
+</form>

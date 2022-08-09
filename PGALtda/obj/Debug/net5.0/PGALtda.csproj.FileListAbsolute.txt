@@ -392,3 +392,4 @@ C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\InativarConfirmacao.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\FuncionarioUnidade.cshtml.g.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Funcionario\DesvincularFuncionarioConfirmacao.cshtml.g.cs
+C:\Users\pedro\OneDrive\Área de Trabalho\projetos\PGALtda\PGALtda\obj\Debug\net5.0\Razor\Views\Relatorio\Index.cshtml.g.cs

@@ -16,8 +16,8 @@ namespace PGALtda.Repositorios
         }
         public List<FuncionarioUnidadeModel> ObterDados(FiltroDto filtro)
         {
-            var relatorio = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal ||
-             x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal);
+            var relatorio = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId ||
+             x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId);
 
             
             return relatorio.ToList();
