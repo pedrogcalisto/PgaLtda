@@ -26,7 +26,7 @@ namespace PGALtda.Controllers
         public IActionResult GerarRelatorio(FiltroDto filtro)
         {
             var dados =  _relatorioRepository.ObterDados(filtro);
-            return View(dados);
+            return View("Relatorio",dados);
         }
     }
 }

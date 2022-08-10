@@ -6,6 +6,6 @@ namespace PGALtda.Repositorios.Interface
 {
     public interface IRelatorioRepository
     {
-        List<FuncionarioUnidadeModel> ObterDados(FiltroDto filtro);
+        List<RelatorioDto> ObterDados(FiltroDto filtro);
     }
 }

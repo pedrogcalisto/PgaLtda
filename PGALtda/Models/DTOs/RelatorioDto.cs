@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PGALtda.Models.DTOs
 {
-    public abstract class RelatorioDto
+    public class RelatorioDto
     {
-        public int UnidadeId { get; set; }
-        public string Nome { get; set; }
-        public string Cidade { get; set; }
-        public List<FuncionarioDto> Funcionarios { get; set; }
+        public string UnidadeNome { get; set; }
+        public string FuncionarioNome { get; set; }
+        public int FuncionarioId { get; set; }
+        public DateTime DtAdmissao { get; set; }
+        public DateTime? DtDemissao { get; set; }
     }
 }

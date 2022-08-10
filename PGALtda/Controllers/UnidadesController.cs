@@ -32,13 +32,8 @@ namespace PGALtda.Controllers
         [HttpPost]
         public IActionResult Cadastrar(UnidadeModel unidade) 
         {
-            if (ModelState.IsValid)
-            {
-                _unidadeRepository.Cadastrar(unidade);
-                return RedirectToAction("Index");
-            }
-
-            return View(unidade);
+           _unidadeRepository.Cadastrar(unidade);
+           return RedirectToAction("Index");
         }
         public IActionResult Inativar(int id)
         {

@@ -1,0 +1,40 @@
+﻿@using PGALtda.Models.DTOs
+@model List<RelatorioDto>
+<div class="text-center">
+    <h1 class="display-4"> Resultado Relatório</h1>
+</div>
+<div class="text-center">
+
+    <br />
+
+    <h1 class="display-4"> Relatório </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Identificador</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Nome Unidade</th>
+          <th scope="col">Data Admissão</th>
+          <th scope="col">Data Demissão</th>
+        </tr>
+      </thead>
+      <tbody>
+            @if(Model != null && Model.Any())
+            {
+                foreach(var item in Model) 
+                {
+ 
+                     <tr>
+                        <td scope="row">@item.FuncionarioId</td>
+                        <td>@item.FuncionarioNome</td>
+                        <td>@item.UnidadeNome</td>
+                        <td>@item.DtAdmissao</td>
+                        <td>@item.DtDemissao</td>
+                    </tr>
+
+                }
+            }
+
+      </tbody>
+    </table>
+</div>

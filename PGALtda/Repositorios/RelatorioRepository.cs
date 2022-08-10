@@ -14,19 +14,29 @@ namespace PGALtda.Repositorios
         {
             _context = context;
         }
-        public List<FuncionarioUnidadeModel> ObterDados(FiltroDto filtro)
+        public List<RelatorioDto> ObterDados(FiltroDto filtro)
         {
-<<<<<<< HEAD
-            var relatorio = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId ||
-             x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId);
-=======
-            var relatorio = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal ||
-             x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal);
-            //gerar relatorio por tipo
->>>>>>> 20d5163f9e5c0c283e1f66c77d95c006d06f74a3
-
+            List<FuncionarioUnidadeModel> relatorioFuncionarioUnidade = new List<FuncionarioUnidadeModel>();
+            if (filtro.TipoRelatorio == 1)
+            {
+                relatorioFuncionarioUnidade = _context.FuncionarioUnidade.Where(x => x.DtAdmissao >= filtro.DataInicial && x.DtAdmissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId).ToList();
+            } else
+            {
+                relatorioFuncionarioUnidade = _context.FuncionarioUnidade.Where(x => x.DtDemissao >= filtro.DataInicial && x.DtDemissao <= filtro.DataFinal && x.UnidadeId == filtro.UnidadeId).ToList();
+            }
+            RelatorioDto relatorio = new RelatorioDto();
+            List<RelatorioDto> relatorioList = new List<RelatorioDto>();
+            foreach(var item in relatorioFuncionarioUnidade)
+            {
+                relatorio.FuncionarioNome = _context.Funcionarios.FirstOrDefault(x => x.Id == item.FuncionarioId).Nome;
+                relatorio.UnidadeNome = _context.Unidades.FirstOrDefault(x=>x.Id == item.UnidadeId).Nome;
+                relatorio.FuncionarioId = item.FuncionarioId;
+                relatorio.DtDemissao = item.DtDemissao;
+                relatorio.DtAdmissao = item.DtAdmissao;
+                relatorioList.Add(relatorio);
+            }
             
-            return relatorio.ToList();
+            return relatorioList;
         }
     }
 }

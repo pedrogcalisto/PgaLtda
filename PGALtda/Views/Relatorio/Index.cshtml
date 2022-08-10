@@ -18,7 +18,9 @@
     <label for="dataFinal" class="form-label">Data Final</label>
     <input type="date" asp-for="DataFinal" class="form-control datepicker" placeholder="Data Final">
   </div>
+
     <div class="mb-3">
+        <label for="unidades" class="form-label">Unidade</label>
         <select id="unidades"asp-for="UnidadeId" class="form-control">
             <option value="0">Selecione</option>
             @{
@@ -27,6 +29,14 @@
                          <option title="@item.Nome" value="@item.Id">@item.Nome</option>
                 }
             }
+        </select>
+    </div>
+     <div class="mb-3">
+         <label for="tipos" class="form-label">Tipo de Relatório</label>
+        <select id="tipos"asp-for="TipoRelatorio" class="form-control">
+            <option value="0">Selecione</option>
+            <option value="1">Relatório Admissão</option>
+            <option value="2">Relatório Demissão</option>
         </select>
     </div>
     <button type="submit" class="btn btn-success btn-block">Gerar Relatório</button> 
