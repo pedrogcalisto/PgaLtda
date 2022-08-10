@@ -2,7 +2,7 @@
 
 namespace PGALtda.Models.DTOs
 {
-    public abstract class RelatorioDto
+    public class RelatorioDto
     {
         public int UnidadeId { get; set; }
         public string Nome { get; set; }
