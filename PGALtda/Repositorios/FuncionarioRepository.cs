@@ -8,24 +8,22 @@ namespace PGALtda.Repositorios
 {
     public class FuncionarioRepository : IFuncionarioRepository
     {
-        private readonly BancoContext _context;
+        private readonly IBancoContext _context;
         private readonly IFuncionarioUnidadeRepository _funcionarioUnidadeRepository;   
-        public FuncionarioRepository(BancoContext context, IFuncionarioUnidadeRepository funcionarioUnidadeRepository)
+        public FuncionarioRepository(IBancoContext context, IFuncionarioUnidadeRepository funcionarioUnidadeRepository)
         {
             _context = context;
             _funcionarioUnidadeRepository = funcionarioUnidadeRepository;
         }
         public FuncionarioModel Cadastrar(FuncionarioModel funcionario)
         {
-            var jaTemCpf = _context.Funcionarios.FirstOrDefault(x => x.Cpf == funcionario.Cpf && x.Ativo == true);
+            var jaTemCpf = _context.Funcionarios.Find(funcionario.Id);
             if (jaTemCpf != null)
             {
                 throw new System.Exception("Cpf já cadastrado!");
             }
 
-            _context.Add(funcionario);
             funcionario.Ativo = true;
-            funcionario.DtCriacao = DateTime.Now;
             _context.SaveChanges();
             return funcionario;
         }
