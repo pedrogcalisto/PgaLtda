@@ -28,22 +28,32 @@ namespace PGALtda.Repositorios
             return funcionario;
         }
 
-        public void Inativar(int id)
+        public bool Inativar(int id)
         {
-            var funcionario = _context.Funcionarios.FirstOrDefault(x => x.Id == id && x.Ativo == true);
-            if (funcionario == null) throw new System.Exception("Houve um erro ao inativar!");
-            funcionario.Ativo = false;
-            _context.SaveChanges();
+            try
+            {
+                var funcionario = _context.Funcionarios.Find(id);
+                if (funcionario == null) throw new System.Exception("Houve um erro ao inativar!");
+                funcionario.Ativo = false;
+                _context.SaveChanges();
+                return true;
+            } catch (Exception e)
+            {
+                return false;
+            }
         }
-
-        public IEnumerable<FuncionarioModel> Listar()
+        public FuncionarioModel Lstar()
         {
-            return _context.Funcionarios.ToList().Where(x => x.Ativo == true);
+            return _context.Funcionarios.Find();
+        }
+        public List<FuncionarioModel> Listar()
+        {
+            return _context.Funcionarios.ToList();
         }
 
         public FuncionarioModel Obter(int id)
         {
-            return _context.Funcionarios.FirstOrDefault(x => x.Id == id);
+            return _context.Funcionarios.Find(id);
         }
 
         public IEnumerable<FuncionarioModel> ListarFuncionariosSemVinculo()

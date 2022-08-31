@@ -5,10 +5,11 @@ namespace PGALtda.Repositorios
 {
     public interface IFuncionarioRepository
     {
-        IEnumerable<FuncionarioModel> Listar();
+        List<FuncionarioModel> Listar();
         FuncionarioModel Cadastrar(FuncionarioModel funcionario);
-        void Inativar(int id);
+        bool Inativar(int id);
         FuncionarioModel Obter(int id);
+        FuncionarioModel Lstar();
         IEnumerable<FuncionarioModel> ListarFuncionariosSemVinculo();
     }
 }

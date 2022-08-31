@@ -37,15 +37,39 @@ namespace Testes.TesteFixture
               ).Returns<FuncionarioModel>(null);         
 
         }
-        public void CriarCenario_Cpf_Ja_Cadastrado()
+
+        public void CriarCenario_Listar()
         {
 
             Mocker.GetMock<IBancoContext>()
-                  .Setup(rep => rep.Funcionarios.Find(It.IsAny<object>())
+                  .Setup(rep => rep.Funcionarios.ToList()
+              ).Returns(FuncionarioRepositoryTesteHelper.GerarListaFuncionarioModel());
+
+        }
+        public void CriarCenario_Editar()
+        {
+
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Funcionarios.Find(It.IsAny<int>())
               ).Returns(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel());
 
+        }
 
+        public void CriarCenario_Inativar()
+        {
 
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Funcionarios.Find(It.IsAny<int>())
+              ).Returns(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel());
+
+        }
+
+        public void CriarCenario_Lsta()
+        {
+
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Funcionarios.Find()
+              ).Returns(FuncionarioRepositoryTesteHelper.GerarLstaFuncionarioModel());
         }
     }
 }

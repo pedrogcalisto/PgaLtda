@@ -7,7 +7,7 @@ using Xunit;
 using FluentAssertions;
 using System;
 
-namespace Testes
+namespace Testes.Repositorios
 {
     [Collection(nameof(FuncionarioRepositoryCollection))]
     public class FuncionarioRepositoryTeste
@@ -28,10 +28,27 @@ namespace Testes
             retorno.Should().BeEquivalentTo(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel());
         }
         [Fact]
-        public void Cadastrar_JaExistente()
+        public void Obter()
         {
-            _funcionarioTesteFixture.CriarCenario_Cpf_Ja_Cadastrado();
-            Assert.Throws<Exception>(() => _funcionarioRepository.Cadastrar(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel()));
+            _funcionarioTesteFixture.CriarCenario_Editar();
+            var retorno = _funcionarioRepository.Obter(1);
+            retorno.Should().BeEquivalentTo(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel());
+        }
+
+        [Fact]
+        public void Inativar()
+        {
+            _funcionarioTesteFixture.CriarCenario_Inativar();
+            var retorno = _funcionarioRepository.Inativar(It.IsAny<int>());
+            retorno.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Listar() 
+        {
+            _funcionarioTesteFixture.CriarCenario_Lsta();
+            var retorno = _funcionarioRepository.Lstar();
+            retorno.Should().BeEquivalentTo(FuncionarioRepositoryTesteHelper.GerarLstaFuncionarioModel());
         }
     }
 }
