@@ -33,6 +33,7 @@ namespace PGALtda
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
             services.AddScoped<IFuncionarioUnidadeRepository, FuncionarioUnidadeRepository>();
             services.AddScoped<IRelatorioRepository, RelatorioRepository>();
+            services.AddScoped<IBancoContext, BancoContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
