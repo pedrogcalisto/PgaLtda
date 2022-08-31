@@ -9,8 +9,8 @@ namespace PGALtda.Repositorios
 {
     public class RelatorioRepository : IRelatorioRepository
     {
-        private readonly BancoContext _context;
-        public RelatorioRepository(BancoContext context)
+        private readonly IBancoContext _context;
+        public RelatorioRepository(IBancoContext context)
         {
             _context = context;
         }
