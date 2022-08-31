@@ -7,7 +7,8 @@ namespace PGALtda.Repositorios
     {
         IEnumerable<UnidadeModel> Listar();
         UnidadeModel Cadastrar (UnidadeModel unidade);
-        void Inativar(int id);
+        bool Inativar(int id);
         UnidadeModel Obter(int id);
+        UnidadeModel Lstar();
     }
 }

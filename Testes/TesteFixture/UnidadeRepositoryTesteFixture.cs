@@ -33,19 +33,42 @@ namespace Testes.TesteFixture
         {
 
             Mocker.GetMock<IBancoContext>()
-                  .Setup(rep => rep.Funcionarios.Find(It.IsAny<object>())
-              ).Returns<FuncionarioModel>(null);
+                  .Setup(rep => rep.Unidades.Find(It.IsAny<object>())
+              ).Returns<UnidadeModel>(null);
 
         }
-        public void CriarCenario_Cpf_Ja_Cadastrado()
+        public void CriarCenario_Listar()
         {
 
             Mocker.GetMock<IBancoContext>()
-                  .Setup(rep => rep.Funcionarios.Find(It.IsAny<object>())
-              ).Returns(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel());
+                  .Setup(rep => rep.Unidades.ToList()
+              ).Returns(UnidadeRepositoryTesteHelper.GerarListaUnidadeModel());
 
+        }
+        public void CriarCenario_Editar()
+        {
 
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Unidades.Find(It.IsAny<int>())
+              ).Returns(UnidadeRepositoryTesteHelper.GerarUnidadeModel());
 
+        }
+
+        public void CriarCenario_Inativar()
+        {
+
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Unidades.Find(It.IsAny<int>())
+              ).Returns(UnidadeRepositoryTesteHelper.GerarUnidadeModel());
+
+        }
+
+        public void CriarCenario_Lsta()
+        {
+
+            Mocker.GetMock<IBancoContext>()
+                  .Setup(rep => rep.Unidades.Find()
+              ).Returns(UnidadeRepositoryTesteHelper.GerarLstaUnidadeModel());
         }
     }
 }

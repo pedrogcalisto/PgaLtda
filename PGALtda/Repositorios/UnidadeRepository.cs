@@ -28,12 +28,19 @@ namespace PGALtda.Repositorios
             return unidade;
         }
 
-        public void Inativar(int id)
+        public bool Inativar(int id)
         {
-            var unidade = _context.Unidades.FirstOrDefault(x => x.Id == id && x.Ativo == true);
-            if (unidade == null) throw new System.Exception("Houve um erro ao inativar!");
-            unidade.Ativo = false;
-            _context.SaveChanges();
+            try
+            {
+                var unidade = _context.Unidades.Find(id);
+                if (unidade == null) throw new System.Exception("Houve um erro ao inativar!");
+                unidade.Ativo = false;
+                _context.SaveChanges();
+                return true;
+            } catch (Exception e) 
+            {
+                return false;
+            }
         }
 
         public IEnumerable<UnidadeModel> Listar()
@@ -43,7 +50,12 @@ namespace PGALtda.Repositorios
 
         public UnidadeModel Obter(int id)
         {
-            return _context.Unidades.FirstOrDefault(x=>x.Id == id);
+            return _context.Unidades.Find(id);
+        }
+
+        public UnidadeModel Lstar()
+        {
+            return _context.Unidades.Find();
         }
     }
 }
