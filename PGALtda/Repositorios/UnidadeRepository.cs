@@ -8,8 +8,8 @@ namespace PGALtda.Repositorios
 {
     public class UnidadeRepository : IUnidadeRepository
     {
-        private readonly BancoContext _context;
-        public UnidadeRepository (BancoContext context) 
+        private readonly IBancoContext _context;
+        public UnidadeRepository (IBancoContext context) 
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace PGALtda.Repositorios
                 throw new System.Exception("Cnpj já cadastrado!");
             }
 
-            _context.Add(unidade);
+            //_context.Add(unidade);
             unidade.Ativo = true;
             unidade.DtCriacao = DateTime.Now;
             _context.SaveChanges();
