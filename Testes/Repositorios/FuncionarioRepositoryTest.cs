@@ -50,5 +50,6 @@ namespace Testes.Repositorios
             var retorno = _funcionarioRepository.Lstar();
             retorno.Should().BeEquivalentTo(FuncionarioRepositoryTesteHelper.GerarLstaFuncionarioModel());
         }
+
     }
 }
