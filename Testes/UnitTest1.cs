@@ -33,5 +33,6 @@ namespace Testes
             _funcionarioTesteFixture.CriarCenario_Cpf_Ja_Cadastrado();
             Assert.Throws<Exception>(() => _funcionarioRepository.Cadastrar(FuncionarioRepositoryTesteHelper.GerarFuncionarioModel()));
         }
+
     }
 }
